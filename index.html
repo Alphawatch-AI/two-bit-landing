@@ -96,6 +96,13 @@
   .badge { display: inline-block; font-size: 0.6875rem; font-weight: 600; padding: 0.2rem 0.6rem; background: var(--bg-dark); color: var(--fg-muted); border: 1px solid var(--border); letter-spacing: 0.02em; }
   .card-header-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
 
+  /* FAQ */
+  .faq { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+  .faq-list { max-width: 40rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+  .faq-item {}
+  .faq-q { font-size: 1rem; font-weight: 600; color: var(--fg); margin-bottom: 0.5rem; }
+  .faq-a { font-size: 0.875rem; color: var(--fg-muted); line-height: 1.7; }
+
   /* Footer */
   .footer { padding: 3rem 0; text-align: center; }
   .footer p { font-size: 0.8125rem; color: var(--fg-muted); }
@@ -321,6 +328,27 @@
         </div>
         <div class="card-title">Image to Excel</div>
         <div class="card-desc">Convert images of tables or data into editable Excel spreadsheets.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-q">What happens to my files after processing?</h3>
+        <p class="faq-a">Your documents are only temporarily stored on our servers while we process them. Once the results are sent back to you, your files are deleted. We do not retain, archive, or use your documents for any other purpose.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">Is my data private and secure?</h3>
+        <p class="faq-a">Yes. All file transfers happen over encrypted connections. Your documents are never shared with third parties, and we do not train any models on your data. Privacy and security are foundational to how we built this service.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">How does Two Bit make money?</h3>
+        <p class="faq-a">The basic service is free. We charge monthly subscriptions for power users who need higher volume, priority processing, and additional features.</p>
       </div>
     </div>
   </div>
