@@ -8,8 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="favicon.png">
-<title>Two Bit | Your Document Agent, One Email Away</title>
-<meta name="description" content="Send your files to our AI agent by email. Merge PDFs, convert Word docs, transform images, and more. No sign-up, no uploads. Just email and get results back in moments." />
+<title>Two Bit | Email us your documents. We'll handle the rest.</title>
+<meta name="description" content="Email your files to iris@twobit.ai. Fill in templates, generate documents in bulk, rename files, convert between formats. Results come back in minutes." />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -30,7 +30,6 @@
   a { color: inherit; text-decoration: none; }
   ::selection { background: rgba(30,58,95,0.15); }
 
-  /* Nav */
   .nav { border-bottom: 1px solid var(--border); background: var(--bg); }
   .container { max-width: 72rem; margin: 0 auto; padding: 0 2rem; }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
@@ -42,334 +41,229 @@
   .nav-contact { font-size: 0.8125rem; font-weight: 500; color: var(--accent); padding: 0.375rem 1rem; border: 1px solid var(--accent); transition: all 0.15s; }
   .nav-contact:hover { background: var(--accent); color: #fff; }
 
-  /* Hero */
   .hero { border-bottom: 1px solid var(--border); }
   .hero-inner { padding: 6rem 2rem 5rem; text-align: center; max-width: 72rem; margin: 0 auto; }
   .hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 400; letter-spacing: -0.01em; line-height: 1.3; color: var(--fg); }
-  .hero p { margin-top: 1.5rem; max-width: 38rem; margin-left: auto; margin-right: auto; font-size: 1.125rem; color: var(--fg-muted); line-height: 1.7; }
+  .hero-sub { margin-top: 1.5rem; max-width: 34rem; margin-left: auto; margin-right: auto; font-size: 1.0625rem; color: var(--fg-muted); line-height: 1.7; }
   .hero-email { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(30,58,95,0.3); }
   .hero-email:hover { text-decoration-color: var(--accent); }
   .email-link { color: var(--accent); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(30,58,95,0.3); }
   .email-link:hover { text-decoration-color: var(--accent); }
+  .hero-cta { display: flex; align-items: center; justify-content: center; margin-top: 2.5rem; gap: 0.75rem; flex-wrap: wrap; }
   .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; font-weight: 500; font-size: 0.875rem; cursor: pointer; border: none; transition: all 0.15s; font-family: var(--font); }
-  .hero-cta { display: flex; flex-direction: column; align-items: center; margin-top: 3.5rem; gap: 1.25rem; }
   .btn-secondary { background: var(--accent); color: #fff; }
   .btn-secondary:hover { background: var(--accent-dark); }
-  .yc-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 500; color: var(--fg-muted); padding: 0.55rem 1.1rem 0.55rem 0.75rem; border: 1px solid var(--border); background: var(--card); }
-  .yc-badge svg { flex-shrink: 0; border-radius: 4px; }
-  .btn-primary { background: var(--accent); color: #fff; width: 100%; justify-content: center; }
-  .btn-primary:hover { background: var(--accent-dark); }
+  .trust-row { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.75rem; }
+  .trust-pill { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 500; color: var(--fg-muted); padding: 0.55rem 1.1rem 0.55rem 0.75rem; border: 1px solid var(--border); background: var(--card); }
+  .trust-pill svg { flex-shrink: 0; }
 
-  /* Used By */
-  .used-by { border-bottom: 1px solid var(--border); padding: 3rem 0; text-align: center; }
-  .used-by-label { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-muted); margin-bottom: 1.5rem; }
-  .used-by-logos { display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-  .client-logo { height: 1.75rem; width: auto; opacity: 0.8; transition: opacity 0.15s; }
-  .client-logo:hover { opacity: 1; }
-  .used-by-note { margin-top: 1.25rem; font-size: 0.8125rem; color: var(--fg-muted); font-style: italic; }
+  /* Email mockup */
+  .example { border-bottom: 1px solid var(--border); padding: 5rem 0; }
+  .example-inner { max-width: 36rem; margin: 0 auto; }
+  .example-label { font-size: 0.8125rem; color: var(--fg-muted); margin-bottom: 1.25rem; text-align: center; }
+  .email-mock { background: #fff; border: 1px solid var(--border); overflow: hidden; }
+  .email-header { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); font-size: 0.8125rem; color: var(--fg-muted); display: flex; flex-direction: column; gap: 0.25rem; }
+  .email-header strong { color: var(--fg); font-weight: 600; }
+  .email-body { padding: 1.25rem; font-size: 0.875rem; color: var(--fg); line-height: 1.7; }
+  .email-attachment { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--bg); border: 1px solid var(--border); padding: 0.35rem 0.7rem; font-size: 0.75rem; color: var(--fg-muted); margin-top: 0.75rem; }
+  .email-attachment svg { width: 14px; height: 14px; color: var(--fg-muted); }
+  .email-divider { display: flex; align-items: center; justify-content: center; padding: 1.25rem 0; }
+  .email-divider span { font-size: 0.75rem; color: var(--fg-muted); background: var(--bg); padding: 0 0.75rem; position: relative; }
+  .email-divider::before { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .email-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .reply-label { font-size: 0.75rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
 
-  /* How It Works */
-  .how { border-bottom: 1px solid var(--border); padding: 5rem 0; }
-  .section-label { text-align: center; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-muted); margin-bottom: 0.75rem; }
-  .section-title { text-align: center; font-size: clamp(1.375rem, 3vw, 1.625rem); font-weight: 400; margin-bottom: 3.5rem; letter-spacing: -0.01em; color: var(--fg); }
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; }
-  .step { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
-  .step-num { font-size: 2rem; font-weight: 700; color: var(--border); line-height: 1; margin-bottom: 0.75rem; }
-  .step-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--fg); }
-  .step-desc { font-size: 0.8125rem; color: var(--fg-muted); line-height: 1.6; }
+  .section-title { text-align: center; font-size: clamp(1.375rem, 3vw, 1.625rem); font-weight: 400; margin-bottom: 1rem; letter-spacing: -0.01em; color: var(--fg); }
 
   /* Services */
   .services { padding: 5rem 0; border-bottom: 1px solid var(--border); }
-  .services-subtitle { text-align: center; color: var(--fg-muted); max-width: 40rem; margin: -2.5rem auto 3rem; font-size: 0.9375rem; line-height: 1.6; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
-  .card { background: var(--card); border: 1px solid var(--border-light); padding: 1.5rem; display: flex; flex-direction: column; transition: all 0.15s; }
-  .card:hover { border-color: var(--border); background: #fff; }
-  .card-icon { width: 2.25rem; height: 2.25rem; background: var(--accent-subtle); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; }
-  .card-icon svg { width: 1.125rem; height: 1.125rem; color: var(--accent); }
-  .card-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.375rem; color: var(--fg); }
-  .card-desc { font-size: 0.8125rem; color: var(--fg-muted); margin-bottom: 1.5rem; line-height: 1.6; }
-  .card-footer { margin-top: auto; }
+  .services-intro { text-align: center; color: var(--fg-muted); max-width: 32rem; margin: 0 auto 3rem; font-size: 0.9375rem; line-height: 1.6; }
+  .services-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center; }
+  .services-image { overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .services-image img { width: 250%; max-width: none; display: block; }
+  @media (max-width: 768px) {
+    .services-columns { grid-template-columns: 1fr; gap: 2.5rem; }
+    .services-image { order: -1; }
+  }
+  .feature { max-width: 36rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  .feature:last-child { border-bottom: none; padding-bottom: 0; }
+  .feature:first-child { padding-top: 0; }
+  .feature-num { font-size: 0.75rem; font-weight: 600; color: var(--border); letter-spacing: 0.05em; margin-bottom: 0.625rem; }
+  .feature h3 { font-size: 1.25rem; font-weight: 600; color: var(--fg); margin-bottom: 0.625rem; }
+  .feature p { font-size: 0.9375rem; color: var(--fg-muted); line-height: 1.7; }
+  .feature .feature-link { display: inline-flex; align-items: center; gap: 0.375rem; margin-top: 1rem; font-size: 0.8125rem; font-weight: 500; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(30,58,95,0.3); }
+  .feature .feature-link:hover { text-decoration-color: var(--accent); }
+  .feature .feature-link svg { width: 14px; height: 14px; }
+  .feature-also { font-size: 0.8125rem; color: var(--fg-muted); line-height: 1.7; margin-top: 0.375rem; }
 
-  /* Coming Soon */
-  .coming { padding: 5rem 0; border-bottom: 1px solid var(--border); }
-  .card-muted { opacity: 0.55; }
-  .badge { display: inline-block; font-size: 0.6875rem; font-weight: 600; padding: 0.2rem 0.6rem; background: var(--bg-dark); color: var(--fg-muted); border: 1px solid var(--border); letter-spacing: 0.02em; }
-  .card-header-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
-
-  /* FAQ */
   .faq { padding: 5rem 0; border-bottom: 1px solid var(--border); }
-  .faq-list { max-width: 40rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
-  .faq-item {}
-  .faq-q { font-size: 1rem; font-weight: 600; color: var(--fg); margin-bottom: 0.5rem; }
-  .faq-a { font-size: 0.875rem; color: var(--fg-muted); line-height: 1.7; }
+  .faq-list { max-width: 36rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.75rem; }
+  .faq-q { font-size: 0.9375rem; font-weight: 600; color: var(--fg); margin-bottom: 0.375rem; }
+  .faq-a { font-size: 0.875rem; color: var(--fg-muted); line-height: 1.65; }
 
-  /* Footer */
   .footer { padding: 3rem 0; text-align: center; }
   .footer p { font-size: 0.8125rem; color: var(--fg-muted); }
-  .footer a { color: var(--accent); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(45,90,39,0.3); }
+  .footer a { color: var(--accent); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(30,58,95,0.3); }
   .footer a:hover { text-decoration-color: var(--accent); }
   .footer .copy { margin-top: 0.75rem; font-size: 0.75rem; color: var(--fg-muted); opacity: 0.6; }
 
-  /* SVG icons inline */
   svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 </style>
 </head>
 <body>
 
-<!-- Nav -->
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="/" class="nav-brand"><img src="logo.png" alt="Two Bit" class="nav-logo">Two Bit: Your Document Assistant</a>
+    <a href="/" class="nav-brand"><img src="logo.png" alt="Two Bit" class="nav-logo">Two Bit</a>
     <div class="nav-links">
       <a href="https://feedback.twobit.ai/feedback" target="_blank" class="nav-link">Feedback</a>
-      <a href="mailto:jackson@twobit.ai" class="nav-contact">Contact Us</a>
+      <a href="mailto:jackson@twobit.ai" class="nav-contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- Hero -->
 <header class="hero">
   <div class="hero-inner">
-    <h1>Your Document Agent,<br>One Email Away</h1>
-    <p>Send your files to <a href="mailto:iris@twobit.ai" class="hero-email">iris@twobit.ai</a> and our AI agent handles the rest. Merge PDFs, convert Word docs, transform images, and more. No sign-up, no uploads. Just email and get results back in moments.</p>
+    <h1>Email us your documents.<br>We'll send them back done.</h1>
+    <p class="hero-sub">Attach your files to an email to <a href="mailto:iris@twobit.ai" class="hero-email">iris@twobit.ai</a>, tell us what you need, and we'll reply with the finished result. Templates, bulk jobs, conversions, whatever.</p>
     <div class="hero-cta">
-      <a href="#services" class="btn btn-secondary">
-        View Services
-        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      <a href="mailto:iris@twobit.ai" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email iris@twobit.ai
       </a>
-      <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
-        <div class="yc-badge">
-          <img src="yc-logo.svg" alt="Y Combinator" width="20" height="20" style="border-radius: 4px;">
-          Backed by Y Combinator
-        </div>
-        <div class="yc-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="none">
-            <path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.25C17.25 23.15 21 18.25 21 13V7l-9-5z" fill="#1E3A5F"/>
-            <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-          SOC 2 Type II Compliant
-        </div>
+    </div>
+    <div class="trust-row">
+      <div class="trust-pill">
+        <img src="yc-logo.svg" alt="Y Combinator" width="20" height="20" style="border-radius: 4px;">
+        Backed by Y Combinator
+      </div>
+      <div class="trust-pill">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="none">
+          <path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.25C17.25 23.15 21 18.25 21 13V7l-9-5z" fill="#1E3A5F"/>
+          <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        SOC 2 Type II
       </div>
     </div>
   </div>
 </header>
 
-<!-- Used By -->
-<section class="used-by">
+<section class="example">
   <div class="container">
-    <p class="used-by-label">Trusted by</p>
-    <div class="used-by-logos">
-      <img src="logo-warburg.png" alt="Warburg Pincus" class="client-logo">
-      <img src="logo-kone.png" alt="KONE" class="client-logo">
+    <div class="example-inner">
+      <p class="example-label">Here's what a typical request looks like:</p>
+      <div class="email-mock">
+        <div class="email-header">
+          <div><strong>From:</strong> you@yourcompany.com</div>
+          <div><strong>To:</strong> iris@twobit.ai</div>
+          <div><strong>Subject:</strong> Fill in these engagement letters</div>
+        </div>
+        <div class="email-body">
+          Hey, can you fill in the attached template for each row in the spreadsheet? Name goes in the header, date on page 2, and the address in the signature block. Name each file "Engagement Letter - [Client Name].docx". Thanks!
+          <div>
+            <span class="email-attachment"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> engagement_template.docx</span>
+            <span class="email-attachment"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> client_list.xlsx</span>
+          </div>
+        </div>
+      </div>
+      <div class="email-divider"><span>2 minutes later</span></div>
+      <div class="email-mock">
+        <div class="email-header">
+          <div class="reply-label">Reply from Iris</div>
+          <div><strong>Subject:</strong> Re: Fill in these engagement letters</div>
+        </div>
+        <div class="email-body">
+          Done! I filled in all 47 engagement letters from your spreadsheet. Each one has the client name in the header, today's date on page 2, and their address in the signature block. Files are named "Engagement Letter - [Client Name].docx" as requested. All in the attached zip.
+          <div>
+            <span class="email-attachment"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> engagement_letters_filled.zip</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="used-by-note">and by many other professionals in legal and finance.</p>
   </div>
 </section>
 
-<!-- How It Works -->
-<section class="how">
-  <div class="container">
-    <h2 class="section-title">How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">1</span>
-        <h3 class="step-title">Write Your Instructions</h3>
-        <p class="step-desc">Describe what you need done: convert, merge, split, edit, or anything else.</p>
-      </div>
-      <div class="step">
-        <span class="step-num">2</span>
-        <h3 class="step-title">Send Your Files</h3>
-        <p class="step-desc">Email your files to <a href="mailto:iris@twobit.ai" class="email-link">iris@twobit.ai</a> with your request. We'll take it from there.</p>
-      </div>
-      <div class="step">
-        <span class="step-num">3</span>
-        <h3 class="step-title">Get Results</h3>
-        <p class="step-desc">We process your files and email them back, ready to use.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Services -->
 <section id="services" class="services">
   <div class="container">
-    <h2 class="section-title">Our Services</h2>
-    <p class="services-subtitle">Supports PNG, JPG, TIFF, BMP, GIF, WebP, HEIC, and HEIF image formats. Click "Get Started" or email <a href="mailto:iris@twobit.ai" class="email-link">iris@twobit.ai</a> directly with your files attached.</p>
-    <div class="grid">
+    <h2 class="section-title">What you can send us</h2>
+    <p class="services-intro">If it involves documents, we probably handle it.</p>
 
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-        <div class="card-title">Image to Image</div>
-        <div class="card-desc">Convert between image formats: PNG, JPG, TIFF, BMP, GIF, WebP, HEIC, and HEIF to PNG or JPG output.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20Image%20to%20Image%20Conversion&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22Image%20to%20Image%20Conversion%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-        <div class="card-title">PDF to Image</div>
-        <div class="card-desc">Render PDF pages to high-quality PNG or JPG at 200 DPI. Select specific pages or convert them all.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20PDF%20to%20Image&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22PDF%20to%20Image%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-        <div class="card-title">Image to PDF</div>
-        <div class="card-desc">Convert PNG, JPG, TIFF, BMP, GIF, WebP, HEIC, or HEIF images into a PDF. Each image becomes a page.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20Image%20to%20PDF&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22Image%20to%20PDF%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <div class="card-title">Word to PDF</div>
-        <div class="card-desc">Convert Word documents to polished PDF format.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20Word%20to%20PDF&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22Word%20to%20PDF%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <div class="card-title">PDF to Word</div>
-        <div class="card-desc">Convert PDF files to editable Word documents.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20PDF%20to%20Word&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22PDF%20to%20Word%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
-        <div class="card-title">Merge PDFs</div>
-        <div class="card-desc">Combine multiple PDF files into a single document.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20Merge%20PDFs&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22Merge%20PDFs%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></div>
-        <div class="card-title">Split PDF</div>
-        <div class="card-desc">Break a PDF into separate individual files.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20Split%20PDF&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22Split%20PDF%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <div class="card-title">Edit Word Document</div>
-        <div class="card-desc">Update text, fix formatting, or modify content in your Word documents.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20Edit%20Word%20Document&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22Edit%20Word%20Document%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-        <div class="card-title">Create Custom PDF (Beta)</div>
-        <div class="card-desc">Combine PDF, Word, and image files into one document.</div>
-        <div class="card-footer">
-          <a href="mailto:iris@twobit.ai?subject=PDF%20Service%20Request%3A%20Create%20Custom%20PDF&body=Hi%2C%0A%0AI'd%20like%20to%20request%20the%20%22Create%20Custom%20PDF%22%20service.%0A%0APlease%20find%20my%20files%20attached.%0A%0AAdditional%20instructions%3A%0A%0A%0AThank%20you." class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Get Started
-          </a>
-        </div>
-      </div>
-
+    <div class="services-columns">
+    <div class="services-features">
+    <div class="feature">
+      <div class="feature-num">01</div>
+      <h3>Fill in templates</h3>
+      <p>Send a Word doc or PDF template and we'll populate it with your data. Contracts, letters, forms — any layout works. Attach a spreadsheet and we'll generate one for every row.</p>
+      <a href="mailto:iris@twobit.ai?subject=Template%20fill%20request&body=Hey%20Iris%2C%0A%0ACan%20you%20fill%20in%20the%20attached%20template%20with%20the%20data%20in%20the%20spreadsheet%3F%0A%0AThanks!" class="feature-link">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send a template
+      </a>
     </div>
+
+    <div class="feature">
+      <div class="feature-num">02</div>
+      <h3>Generate files in bulk</h3>
+      <p>One template + a spreadsheet = a file for every row. A law firm sent us a template and 200 client records last week. We sent back 200 engagement letters in under 5 minutes.</p>
+      <a href="mailto:iris@twobit.ai?subject=Bulk%20generation%20request&body=Hey%20Iris%2C%0A%0ACan%20you%20generate%20a%20file%20for%20each%20row%20in%20the%20attached%20spreadsheet%20using%20this%20template%3F%0A%0AThanks!" class="feature-link">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send a bulk job
+      </a>
+    </div>
+
+    <div class="feature">
+      <div class="feature-num">03</div>
+      <h3>Rename files in bulk</h3>
+      <p>Attach your files and tell us the naming convention, or include a spreadsheet with the mappings. We'll send them back renamed.</p>
+      <a href="mailto:iris@twobit.ai?subject=Rename%20these%20files&body=Hey%20Iris%2C%0A%0ACan%20you%20rename%20the%20attached%20files%3F%20Here's%20how%20I%20need%20them%20named%3A%0A%0A" class="feature-link">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send files to rename
+      </a>
+    </div>
+
+    <div class="feature">
+      <div class="feature-num">04</div>
+      <h3>Convert and edit</h3>
+      <p>Merge or split PDFs. Convert between PDF, Word, and images. Edit text in Word docs. The basics, without installing anything.</p>
+      <a href="mailto:iris@twobit.ai?subject=Document%20request&body=Hey%20Iris%2C%0A%0ACan%20you%20help%20with%20the%20attached%20files%3F%20Here's%20what%20I%20need%3A%0A%0A" class="feature-link">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Send files
+      </a>
+    </div>
+    </div>
+    <div class="services-image">
+      <img src="documents.png" alt="Example documents — forms, contracts, certificates" style="background: #F4F5F7;">
+    </div>
+    </div>
+
   </div>
 </section>
 
-<!-- Coming Soon -->
-<section class="coming">
-  <div class="container">
-    <h2 class="section-title">Coming Soon</h2>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-      <div class="card card-muted">
-        <div class="card-header-row">
-          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-          <span class="badge">Coming Soon</span>
-        </div>
-        <div class="card-title">Sign Documents</div>
-        <div class="card-desc">Add digital signatures to your PDFs.</div>
-      </div>
-      <div class="card card-muted">
-        <div class="card-header-row">
-          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-          <span class="badge">Coming Soon</span>
-        </div>
-        <div class="card-title">PDF to Excel</div>
-        <div class="card-desc">Extract tables and data from PDFs into editable Excel spreadsheets.</div>
-      </div>
-      <div class="card card-muted">
-        <div class="card-header-row">
-          <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-          <span class="badge">Coming Soon</span>
-        </div>
-        <div class="card-title">Image to Excel</div>
-        <div class="card-desc">Convert images of tables or data into editable Excel spreadsheets.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
 <section class="faq">
   <div class="container">
-    <h2 class="section-title">Frequently Asked Questions</h2>
+    <h2 class="section-title">FAQ</h2>
     <div class="faq-list">
       <div class="faq-item">
-        <h3 class="faq-q">What happens to my files after processing?</h3>
-        <p class="faq-a">Your documents are only temporarily stored on our servers while we process them. Once the results are sent back to you, your files are deleted. We do not retain, archive, or use your documents for any other purpose.</p>
+        <h3 class="faq-q">What happens to my files?</h3>
+        <p class="faq-a">We process them and delete them. We don't keep copies, we don't archive anything, and we don't train on your data.</p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-q">Is my data private and secure?</h3>
-        <p class="faq-a">Yes. We are SOC 2 Type II compliant and held to the strictest enterprise compliance standards. All file transfers happen over encrypted connections. Your documents are never shared with third parties, and we do not train any models on your data. Privacy and security are foundational to how we built this service.</p>
+        <h3 class="faq-q">Is this secure?</h3>
+        <p class="faq-a">SOC 2 Type II compliant. Everything is encrypted in transit. We're used by teams at Warburg Pincus, KONE, and other companies in legal and finance.</p>
       </div>
       <div class="faq-item">
-        <h3 class="faq-q">How does Two Bit make money?</h3>
-        <p class="faq-a">The basic service is free. We charge monthly subscriptions for power users who need higher volume, priority processing, and additional features.</p>
+        <h3 class="faq-q">What does it cost?</h3>
+        <p class="faq-a">Free to start. We have monthly plans for teams that need higher volume and priority processing.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
   <div class="container">
-    <p>Questions? Reach our agent (and a human) at <a href="mailto:iris@twobit.ai">iris@twobit.ai</a></p>
+    <p>Questions? Email <a href="mailto:iris@twobit.ai">iris@twobit.ai</a>. A human reads the inbox too.</p>
     <p style="margin-top: 0.75rem;"><a href="https://feedback.twobit.ai/feedback" target="_blank">Share feedback</a></p>
-    <img src="soc2-logo.png" alt="SOC 2 Compliant" style="height: 4rem; margin-top: 1.25rem; opacity: 0.7;">
-    <p class="copy">&copy; 2026 Two Bit AI. All rights reserved.</p>
+    <img src="soc2-logo.png" alt="SOC 2 Compliant" style="height: 3.5rem; margin-top: 1.25rem; opacity: 0.65;">
+    <p class="copy">&copy; 2026 Two Bit AI</p>
   </div>
 </footer>
 
