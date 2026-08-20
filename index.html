@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#FBFAF8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FBFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" href="favicon.png">
-<title>Two Bit — Where deal thinking comes alive</title>
-<meta name="description" content="Two Bit is the living workspace for deal thinking. Prep client meetings, capture management presentation notes, track deal context, draft internal memos, and run diligence work in one page." />
-<meta property="og:title" content="Two Bit — Where deal thinking comes alive" />
-<meta property="og:description" content="Organize every thought behind a deal, from first meeting to final memo. Two Bit connects notes, prompts, sources, and workflows in one living workspace." />
-<meta property="og:type" content="website" />
+<title>Two Bit | Hire an AI researcher</title>
+<meta name="description" content="Build target lists, research any company, and track your pipeline with an AI researcher for private markets. $499 a month.">
+<meta property="og:title" content="Two Bit | Hire an AI researcher">
+<meta property="og:description" content="Hire an AI researcher. Skip the data subscriptions.">
+<meta property="og:type" content="website">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -92,23 +92,33 @@
   .nav .btn { padding: 0.55rem 1rem; font-size: 0.9rem; }
 
   /* ───────── HERO ───────── */
-  .hero { padding: 4.5rem 0 3.5rem; }
+  .hero {
+    position: relative; isolation: isolate; overflow: hidden; padding: 6.8rem 0 3.7rem;
+    color: var(--cream); background:
+      radial-gradient(circle at 50% 0%, rgba(80, 88, 238, 0.24), transparent 38rem),
+      linear-gradient(180deg, #17151A 0%, #121114 100%);
+  }
+  .hero::before {
+    content: ''; position: absolute; z-index: -1; inset: 0; opacity: 0.3; pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+    background-size: 64px 64px; mask-image: linear-gradient(to bottom, black, transparent 72%);
+  }
   .hero-copy { max-width: 52rem; }
-  .hero h1 { font-size: clamp(2.9rem, 7vw, 5.3rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; }
-  .uline { position: relative; white-space: nowrap; }
-  .uline-svg { position: absolute; left: -1%; bottom: -0.02em; width: 102%; height: 0.2em; overflow: visible; }
-  .uline-svg path { stroke: var(--brand); stroke-width: 6; fill: none; stroke-linecap: round; }
-  .hero-sub { margin-top: 1.6rem; font-size: clamp(1.1rem, 1.7vw, 1.32rem); line-height: 1.5; color: var(--ink-2); max-width: 38rem; font-weight: 450; }
-  .hero-sub b { color: var(--ink); font-weight: 600; }
-  .hero-actions { margin-top: 2.1rem; display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
-  .hero-meta { margin-top: 1.5rem; display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; font-size: 0.86rem; color: var(--ink-3); font-weight: 500; }
-  .hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-3); opacity: 0.5; }
-  .hero-meta img { height: 0.95rem; width: auto; border-radius: 3px; opacity: 0.85; vertical-align: middle; }
-  .hero-meta .mi { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .hero h1 {
+    color: #F7F3EC; font-family: var(--serif); font-size: clamp(4rem, 7.2vw, 6.8rem);
+    font-weight: 500; letter-spacing: -0.05em; line-height: 0.94;
+  }
+  .hero-kicker { margin-bottom: 1.3rem; color: #9CA0F2; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+  .hero-sub { margin-top: 1.7rem; font-size: clamp(1.08rem, 1.7vw, 1.28rem); line-height: 1.5; color: #BDB7B0; max-width: 36rem; font-weight: 450; }
+  .hero-actions { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .hero .btn-dark { background: #F7F3EC; color: #17151A; }
+  .hero .btn-dark:hover { background: #FFFFFF; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+  .launch-price { color: #8E8983; font-size: 0.9rem; font-weight: 500; }
+  .launch-price strong { color: #E8E2DA; font-weight: 600; }
 
   /* ───────── APP WINDOW (the product) ───────── */
-  .app-wrap { margin-top: 3.2rem; }
-  .app-window { background: var(--card); border: 1px solid var(--line-2); border-radius: 16px; box-shadow: var(--sh-lg); overflow: hidden; display: grid; grid-template-columns: 232px 1fr; }
+  .app-wrap { margin-top: 5rem; max-width: 68rem; }
+  .app-window { background: var(--card); border: 1px solid rgba(255,255,255,0.16); border-radius: 16px; box-shadow: 0 38px 100px rgba(0,0,0,0.45); overflow: hidden; display: grid; grid-template-columns: 220px 1fr; }
   .app-top { grid-column: 1 / -1; display: flex; align-items: center; gap: 0.5rem; padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--line); background: #FCFBF9; }
   .tl { display: flex; gap: 0.45rem; }
   .tl i { width: 11px; height: 11px; border-radius: 50%; display: block; }
@@ -190,15 +200,8 @@
   .caret { display: inline-block; width: 2px; height: 1.05em; background: var(--brand); margin-left: 1px; vertical-align: text-bottom; animation: blink 1.05s steps(1) infinite; }
   @keyframes rise { from{opacity:0; transform: translateY(8px);} to{opacity:1; transform:none;} }
 
-  .app-cap { margin-top: 1.15rem; font-size: 0.9rem; line-height: 1.55; color: var(--ink-3); max-width: 44rem; }
-  .app-cap b { color: var(--ink-2); font-weight: 600; }
-
-  /* ───────── logo band ───────── */
-  .band { padding: 3.2rem 0 0.5rem; }
-  .band p { text-align: center; font-size: 0.88rem; color: var(--ink-3); font-weight: 500; }
-  .band-logos { margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 3.2rem; flex-wrap: wrap; }
-  .band-logos img { height: 1.5rem; width: auto; opacity: 0.45; filter: grayscale(1); }
-  .band-logos .warburg { height: 0.92rem; }
+  .app-cap { margin: 1.15rem auto 0; font-size: 0.88rem; line-height: 1.55; color: #8E8983; max-width: 44rem; text-align: center; }
+  .app-cap b { color: #CEC7BE; font-weight: 600; }
 
   /* ───────── statement (peach block) ───────── */
   .statement { margin: 5.5rem 0 0; background: var(--peach); border-top: 1px solid var(--peach-line); border-bottom: 1px solid var(--peach-line); }
@@ -222,6 +225,7 @@
   .card { background: var(--card); border: 1px solid var(--line-2); border-radius: 14px; box-shadow: var(--sh); overflow: hidden; }
   .card-bar { display: flex; align-items: center; gap: 0.45rem; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--line); background: #FCFBF9; }
   .card-bar .t { font-size: 0.78rem; color: var(--ink-3); font-weight: 500; margin-left: 0.3rem; }
+  .card-tag-right { margin-left: auto; }
   .card-body { padding: 1.15rem 1.2rem; }
   .mini-prose { font-family: var(--serif); font-size: 1rem; line-height: 1.55; color: #2E2A26; }
   .tag { display: inline-flex; align-items: center; gap: 0.26rem; font-size: 0.64rem; font-weight: 700; padding: 0.08rem 0.44rem; border-radius: 999px; }
@@ -286,13 +290,13 @@
   .ea-form { max-width: 30rem; margin: 2.1rem auto 0; text-align: left; display: grid; gap: 0.7rem; }
   .ea-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
   .ea-form label { font-size: 0.78rem; font-weight: 600; color: var(--ink-2); display: grid; gap: 0.3rem; }
-  .ea-form input, .ea-form textarea {
+  .ea-form input, .ea-form textarea, .ea-form select {
     font-family: var(--ui); font-size: 0.95rem; color: var(--ink); width: 100%;
     background: var(--card); border: 1.5px solid var(--line-2); border-radius: 9px; padding: 0.6rem 0.75rem;
     transition: border-color 0.14s, box-shadow 0.14s;
   }
   .ea-form textarea { min-height: 5.5rem; resize: vertical; line-height: 1.5; }
-  .ea-form input:focus, .ea-form textarea:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-wash); }
+  .ea-form input:focus, .ea-form textarea:focus, .ea-form select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-wash); }
   .ea-form .btn { justify-content: center; width: 100%; margin-top: 0.2rem; }
   .ea-form .btn:disabled { opacity: 0.6; cursor: wait; }
   .ea-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
@@ -325,6 +329,89 @@
   .reveal.in { opacity: 1; transform: none; }
   svg.ico { fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 
+  /* ───────── private-markets researcher ───────── */
+  .hero-copy.research-hero { max-width: 70rem; margin: 0 auto; text-align: center; }
+  .research-hero .hero-sub { max-width: 36rem; margin-left: auto; margin-right: auto; }
+  .research-hero .hero-actions { justify-content: center; }
+
+  .research-doc { padding: 1.5rem 1.7rem 1.8rem; min-height: 25rem; }
+  .research-kicker { font-size: 0.72rem; color: var(--brand-ink); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .research-title { margin-top: 0.38rem; font-family: var(--display); font-size: 1.5rem; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
+  .question-box { margin-top: 1.1rem; padding: 0.85rem 0.95rem; background: var(--brand-wash); border: 1px solid var(--brand-line); border-radius: 10px; font-size: 0.95rem; color: var(--ink); font-weight: 600; }
+  .source-row { margin-top: 0.85rem; display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; }
+  .source-label { font-size: 0.72rem; color: var(--ink-3); font-weight: 700; margin-right: 0.1rem; }
+  .source-chip { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.22rem 0.48rem; border-radius: 6px; border: 1px solid var(--line-2); background: var(--card); color: var(--ink-2); font-size: 0.7rem; font-weight: 600; }
+  .source-chip::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); }
+  .answer-block { margin-top: 1.15rem; border-top: 1px solid var(--line); padding-top: 1.05rem; }
+  .answer-block h4 { font-family: var(--display); font-size: 1rem; font-weight: 800; }
+  .answer-block > p { margin-top: 0.55rem; font-family: var(--serif); font-size: 0.98rem; color: #2E2A26; line-height: 1.6; }
+  .answer-points { margin-top: 0.75rem; display: grid; gap: 0.55rem; }
+  .answer-point { display: grid; grid-template-columns: 1.15rem 1fr; gap: 0.4rem; font-size: 0.82rem; color: var(--ink-2); line-height: 1.5; }
+  .answer-point .n { width: 1.15rem; height: 1.15rem; display: grid; place-items: center; border-radius: 5px; background: var(--brand-wash); color: var(--brand-ink); font-size: 0.66rem; font-weight: 800; }
+  .answer-cite { margin-top: 0.8rem; font-size: 0.7rem; color: var(--ink-3); }
+
+  .target-table { margin-top: 1rem; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .target-row { display: grid; grid-template-columns: 1.15fr 0.9fr 1fr; gap: 0.75rem; align-items: center; padding: 0.66rem 0.8rem; border-bottom: 1px solid var(--line); font-size: 0.78rem; color: var(--ink-2); }
+  .target-row:last-child { border-bottom: 0; }
+  .target-row.head { background: #F8F6F2; color: var(--ink-3); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+  .target-company { color: var(--ink); font-weight: 700; }
+  .target-contact { color: var(--brand-ink); font-weight: 600; }
+  .target-foot { margin-top: 0.7rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: 0.7rem; color: var(--ink-3); }
+  .export-chip { padding: 0.3rem 0.55rem; border: 1px solid var(--line-2); border-radius: 7px; background: var(--card); color: var(--ink-2); font-weight: 700; }
+
+  .monitor-list { display: grid; gap: 0.5rem; }
+  .monitor-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; padding: 0.68rem 0; border-bottom: 1px solid var(--line); }
+  .monitor-row:last-child { border-bottom: 0; }
+  .monitor-company { font-size: 0.88rem; font-weight: 700; color: var(--ink); }
+  .monitor-update { margin-top: 0.16rem; font-size: 0.77rem; color: var(--ink-3); }
+  .monitor-time { font-family: var(--mono); font-size: 0.67rem; color: var(--ink-3); }
+  .ask-card { display: grid; gap: 0.7rem; }
+  .ask-line { padding: 0.7rem 0.8rem; border: 1px solid var(--line); border-radius: 9px; background: #FCFBF9; font-size: 0.82rem; color: var(--ink-2); }
+  .ask-line strong { display: block; color: var(--ink); font-size: 0.74rem; margin-bottom: 0.18rem; }
+  .subscription-stack { display: grid; gap: 0.55rem; }
+  .subscription-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.65rem 0.75rem; border: 1px solid var(--line); border-radius: 9px; background: #FCFBF9; font-size: 0.82rem; color: var(--ink-2); }
+  .subscription-row strong { color: var(--ink); }
+  .subscription-row.two-bit { border-color: var(--brand-line); background: var(--brand-wash); color: var(--brand-ink); }
+
+  /* ───────── pricing comparison ───────── */
+  .pricing { margin-top: 5.5rem; background: var(--dark); color: var(--cream); }
+  .pricing .container { padding-top: 6rem; padding-bottom: 5.5rem; }
+  .pricing .lead { font-size: 0.82rem; color: #9CA0F2; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .pricing h2 { margin-top: 1.1rem; color: var(--cream); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -0.03em; max-width: 20ch; }
+  .pricing-intro { margin-top: 1.25rem; color: #B8B2A9; font-size: 1.08rem; max-width: 38rem; }
+  .pricing-table { margin-top: 3rem; width: 100%; border: 1px solid var(--dark-line); border-radius: 14px; border-spacing: 0; overflow: hidden; }
+  .pricing-table th, .pricing-table td { padding: 1rem 1.15rem; border-bottom: 1px solid var(--dark-line); text-align: left; }
+  .pricing-table th { background: var(--dark-2); color: #8F8981; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .pricing-table th:last-child { text-align: right; }
+  .pricing-table tbody tr:last-child td { border-bottom: 0; }
+  .pricing-table .product { width: 34%; font-weight: 700; color: #F3EFE7; }
+  .pricing-table .access { width: 42%; color: #A7A198; font-size: 0.9rem; }
+  .pricing-table .cost { width: 24%; color: #F3EFE7; font-family: var(--mono); font-size: 0.88rem; text-align: right; }
+  .pricing-table .stack-total td { background: var(--dark-2); border-top: 2px solid #4A454D; }
+  .pricing-table .stack-total .product, .pricing-table .stack-total .cost { color: #FFFFFF; font-size: 0.95rem; }
+  .pricing-table .highlight td { background: rgba(59,67,224,0.16); }
+  .pricing-table .highlight td:first-child { box-shadow: inset 3px 0 0 var(--brand); }
+  .pricing-table .highlight .product, .pricing-table .highlight .cost { color: #C7C9FF; }
+  .pricing-note { margin-top: 1.4rem; color: #F3EFE7; font-size: 1.02rem; font-weight: 700; }
+  .pricing-fine { margin-top: 1rem; color: #77716A; font-size: 0.72rem; line-height: 1.55; max-width: 56rem; }
+
+  /* ───────── example and FAQ ───────── */
+  .sample { padding: 6rem 0; }
+  .section-eyebrow { color: var(--brand-ink); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+  .sample h2, .faq h2 { margin-top: 0.8rem; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; max-width: 20ch; }
+  .sample-grid { margin-top: 2.5rem; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 1rem; }
+  .sample-panel { border: 1px solid var(--line-2); border-radius: 14px; background: var(--card); box-shadow: var(--sh-sm); padding: 1.35rem; }
+  .sample-panel .label { color: var(--ink-3); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; }
+  .sample-question { margin-top: 0.65rem; font-family: var(--display); font-weight: 700; font-size: 1.15rem; line-height: 1.35; }
+  .sample-answer { margin-top: 0.7rem; font-family: var(--serif); color: #2E2A26; font-size: 1.02rem; line-height: 1.65; }
+  .sample-citation { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--line); font-size: 0.76rem; color: var(--ink-3); }
+
+  .faq { padding: 5.5rem 0; background: #F5F1EA; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .faq-list { margin-top: 2.5rem; max-width: 52rem; }
+  .faq-item { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--line-2); }
+  .faq-q { font-family: var(--display); font-size: 1.08rem; font-weight: 800; line-height: 1.3; }
+  .faq-a { color: var(--ink-2); font-size: 1rem; line-height: 1.6; }
+
   /* ───────── responsive ───────── */
   @media (max-width: 940px) {
     .nav-mid { display: none; }
@@ -333,13 +420,29 @@
     .feat { grid-template-columns: 1fr; gap: 2rem; padding: 2.8rem 0; }
     .feat.flip .feat-vis { order: 0; }
     .epoch-row { grid-template-columns: 1fr 1fr; gap: 1.5rem 1.2rem; }
+    .sample-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 560px) {
     .container { padding: 0 1.15rem; }
-    .hero { padding: 3rem 0 2.5rem; }
-    .hero h1 { font-size: clamp(2.5rem, 11vw, 3.2rem); }
+    .hero { padding: 4.2rem 0 2.7rem; }
+    .hero h1 { font-size: clamp(2.75rem, 12vw, 3.5rem); }
+    .hero-sub { margin-top: 1.35rem; }
+    .hero-actions { margin-top: 1.6rem; }
+    .app-wrap { margin-top: 3.5rem; }
+    .target-row { grid-template-columns: 1fr; gap: 0.15rem; padding: 0.7rem 0.75rem; }
+    .target-row.head { display: none; }
     .epoch-row { grid-template-columns: 1fr; }
     .statement .container, .epoch .container { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+    .pricing .container { padding-top: 4rem; padding-bottom: 4rem; }
+    .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table td { display: block; width: 100%; }
+    .pricing-table thead { display: none; }
+    .pricing-table tr { border-bottom: 1px solid var(--dark-line); }
+    .pricing-table tbody tr:last-child { border-bottom: 0; }
+    .pricing-table td { border-bottom: 0; padding: 0.3rem 1rem; text-align: left; }
+    .pricing-table td.product { width: 100%; padding-top: 1rem; }
+    .pricing-table td.access { width: 100%; }
+    .pricing-table td.cost { width: 100%; padding-bottom: 1rem; text-align: left; }
+    .faq-item { grid-template-columns: 1fr; gap: 0.55rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -354,36 +457,30 @@
   <div class="container nav-inner">
     <a href="/" class="brand"><img src="logo.svg" alt="">Two Bit</a>
     <div class="nav-mid">
-      <a href="#features">Product</a>
-      <a href="#epoch">Why it's different</a>
-      <a href="https://feedback.twobit.ai/feedback" target="_blank" rel="noopener">Feedback</a>
+      <a href="#how-it-works">What you get</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
     </div>
     <div class="nav-right">
-      <a href="#get-access" class="btn btn-dark">Get early access</a>
+      <a href="#get-access" class="btn btn-dark">Hire your researcher</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="container">
-    <div class="hero-copy">
-      <h1>Where deal thinking<br>comes <span class="uline">alive<svg class="uline-svg" viewBox="0 0 300 12" preserveAspectRatio="none"><path d="M4 7C60 4.5 120 4 176 6C234 8 270 7 296 5.5"/></svg></span>.</h1>
-      <p class="hero-sub">The living workspace for every thought behind a deal. Prep client meetings, capture management presentation notes, track deal context, draft internal memos, and <b>run diligence work without leaving the page.</b></p>
+    <div class="hero-copy research-hero">
+      <p class="hero-kicker">AI research for private markets</p>
+      <h1>Hire an AI researcher. Skip the data subscriptions.</h1>
+      <p class="hero-sub">Two Bit builds target lists, researches any company, and tracks your pipeline. Informed by the sources that cost $30,000 a seat, delivered for $499 a month.</p>
       <div class="hero-actions">
-        <a href="#get-access" class="btn btn-dark btn-lg">Get early access</a>
-        <a href="#features" class="btn btn-line btn-lg">See how it works</a>
-      </div>
-      <div class="hero-meta">
-        <span class="mi">Private beta</span>
-        <span class="dot"></span>
-        <span class="mi"><img src="yc-logo.svg" alt=""> Backed by YC Continuity Fund</span>
-        <span class="dot"></span>
-        <span class="mi">SOC 2 Type II</span>
+        <a href="#get-access" class="btn btn-dark btn-lg">Hire your researcher</a>
+        <p class="launch-price"><strong>Waitlist open.</strong> Launching soon.</p>
       </div>
     </div>
   </div>
 
-  <!-- the product, framed as a real app -->
+  <!-- researcher product preview -->
   <div class="container app-wrap">
     <div class="app-window">
       <div class="app-top">
@@ -392,182 +489,134 @@
       </div>
 
       <aside class="app-side">
-        <div class="side-ws"><span class="ws-badge">2b</span> Atlas Capital</div>
-        <div class="side-search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg> Search</div>
-        <div class="side-item active">Northwind deal brief</div>
-        <div class="side-item">Deal pipeline</div>
-        <div class="side-item">Client meeting prep</div>
-        <div class="side-item">Mgmt presentation notes</div>
-        <div class="side-item">Diligence library</div>
-        <div class="side-sec">Skills</div>
-        <div class="side-item">Follow-up questions</div>
-        <div class="side-item">Risk screen</div>
-        <div class="side-new"><svg class="ico" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> New page</div>
+        <div class="side-ws"><span class="ws-badge">2b</span> My research</div>
+        <div class="side-search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.7" y2="16.7"/></svg> Search research</div>
+        <div class="side-item active">Insurance software targets</div>
+        <div class="side-item">Heliograph Systems</div>
+        <div class="side-item">Founder watchlist</div>
+        <div class="side-sec">MONITORING</div>
+        <div class="side-item">12 companies</div>
+        <div class="side-item">3 markets</div>
+        <div class="side-new"><svg class="ico" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> New research</div>
       </aside>
 
       <div class="app-main">
         <div class="main-bar">
-          <span class="crumb">Deals / <b>Northwind brief</b></span>
+          <span class="crumb">Target lists / <b>Insurance software</b></span>
           <span class="spacer"></span>
-          <span class="avatars"><span class="a1">JC</span><span class="a2">MP</span><span class="a3">RK</span></span>
-          <span class="share">Share</span>
-          <span class="dots">•••</span>
+          <span class="tag green">complete</span>
         </div>
-        <div class="codedoc" id="heroDoc">
-          <div class="doc-title"><span class="em">📈</span> Northwind deal brief</div>
-          <div class="doc-meta">Edited just now · 3 collaborators · 1 live block</div>
-
-          <p class="docline first prose" id="ln1"></p>
-
-          <div class="docline" id="b3wrap" style="display:none">
-            <span class="ai-cmd" id="b3"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="cmd" id="p3text"></span><span class="pstat" id="p3stat"></span></span>
-            <div class="out" id="p3out"></div>
+        <div class="research-doc">
+          <div class="research-kicker">Target list</div>
+          <div class="research-title">Independent insurance agency software</div>
+          <div class="question-box">Find US software companies serving independent insurance agencies, with ownership and the best contact.</div>
+          <div class="source-row">
+            <span class="source-label">Researching across</span>
+            <span class="source-chip">Company and deal data</span>
+            <span class="source-chip">Ownership data</span>
+            <span class="source-chip">Contact data</span>
+            <span class="source-chip">Public sources</span>
           </div>
-
-          <p class="docline prose" id="ln5wrap" style="display:none"><span id="l5pre"></span><span class="var pending" id="l5var"></span><span id="l5mid"></span><span id="l5tail"></span></p>
+          <div class="answer-block">
+            <h4>28 matching companies</h4>
+            <div class="target-table">
+              <div class="target-row head"><span>Company</span><span>Ownership</span><span>Best contact</span></div>
+              <div class="target-row"><span class="target-company">Northstar Compliance</span><span>Founder-owned</span><span class="target-contact">Elena Park, CEO</span></div>
+              <div class="target-row"><span class="target-company">Harborline Systems</span><span>PE-backed</span><span class="target-contact">Marcus Reed, VP Sales</span></div>
+              <div class="target-row"><span class="target-company">Cobalt Ledger</span><span>Family-owned</span><span class="target-contact">Priya Shah, Founder</span></div>
+            </div>
+            <div class="target-foot"><span>3 of 28 matches shown</span><span class="export-chip">Export CSV</span></div>
+          </div>
         </div>
       </div>
     </div>
-    <p class="app-cap"><b>Your deal thinking stays live.</b> Drop an instruction into the page and it runs in place. Write a sentence that pulls a value from it — even before that value exists — and the page fills it in, then keeps it current as the deal changes.</p>
+    <p class="app-cap"><b>Get the analyst's output, not the reading pile.</b> Lists, profiles, answers, and tracking, ready to use.</p>
   </div>
 
-  <div class="container band">
-    <p>Used by Fortune 500 companies and financial institutions</p>
-    <div class="band-logos">
-      <img src="logo-warburg.png" alt="Warburg Pincus" class="warburg">
-      <img src="logo-kone.png" alt="KONE">
-    </div>
-  </div>
 </header>
 
 <!-- statement -->
 <section class="statement reveal">
   <div class="container">
-    <h2>Deal context should not live in <span class="soft">scattered notes.</span></h2>
-    <p>Coverage, BD, and origination work starts as fragments: meeting prep, call notes, management slides, follow-ups, memos. Two Bit keeps that context connected and helps turn it into finished work.</p>
+    <h2>Two Bit is your <span class="soft">private-markets researcher.</span></h2>
+    <p>It works across the data Wall Street relies on to build target lists and market maps, research companies, and answer your questions.</p>
   </div>
 </section>
 
 <!-- features -->
-<section class="features" id="features">
+<section class="features" id="how-it-works">
   <div class="container">
 
-    <!-- 01 talks back -->
+    <!-- 01 target lists -->
     <div class="feat reveal">
       <div>
         <span class="feat-num">1</span>
-        <h3>Ask the page anything.</h3>
-        <p>Highlight a management claim and ask what's missing. Question a number and trace where it came from. <b>The document answers in place</b> — no copy-paste into a chat window and back.</p>
+        <h3>Know exactly who to contact.</h3>
+        <p>Describe the companies you are hunting: industry, size, geography, ownership. Get a qualified target list with <b>ownership and contact information, ready for outreach.</b></p>
         <div class="feat-list">
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Inline questions on any selection</div>
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Answers cite the lines they used</div>
+          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ownership and contact information included</div>
+          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Exportable and ready for outreach</div>
         </div>
       </div>
       <div class="feat-vis">
         <div class="card">
-          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">Management presentation notes</span></div>
+          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">Target list · 28 companies</span><span class="tag green card-tag-right">complete</span></div>
           <div class="card-body">
-            <p class="mini-prose">Management says enterprise churn is <mark class="hl">mostly solved after the pricing change</mark>.</p>
-            <div class="comment">
-              <div class="cu"><span class="av">2b</span> Two Bit</div>
-              <div class="ct">The prior deck still shows elevated churn in two enterprise cohorts. Worth asking what changed, and whether the new pricing is visible in renewals yet.</div>
+            <div class="target-table">
+              <div class="target-row head"><span>Company</span><span>Ownership</span><span>Best contact</span></div>
+              <div class="target-row"><span class="target-company">Northstar Compliance</span><span>Founder-owned</span><span class="target-contact">Elena Park, CEO</span></div>
+              <div class="target-row"><span class="target-company">Harborline Systems</span><span>PE-backed</span><span class="target-contact">Marcus Reed, VP Sales</span></div>
+              <div class="target-row"><span class="target-company">Cobalt Ledger</span><span>Family-owned</span><span class="target-contact">Priya Shah, Founder</span></div>
+            </div>
+            <div class="target-foot"><span>28 companies matched</span><span class="export-chip">Export CSV</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 company research -->
+    <div class="feat flip reveal">
+      <div>
+        <span class="feat-num">2</span>
+        <h3>Understand the market before you move.</h3>
+        <p>See the landscape, key players, competitive dynamics, comparable transactions, and risks. Then go deep on any company with <b>sourced answers from broker research, expert transcripts, and private company data.</b></p>
+        <div class="feat-list">
+          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Market maps and comp sets built for your thesis</div>
+          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Sourced answers instead of search results</div>
+        </div>
+      </div>
+      <div class="feat-vis">
+        <div class="card">
+          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">New research</span></div>
+          <div class="card-body">
+            <div class="ask-card">
+              <div class="ask-line"><strong>MARKET MAP</strong>Map vertical software companies serving independent insurance agencies.</div>
+              <div class="ask-line"><strong>COMP SET</strong>Compare retention, ownership, and recent deal activity across the five closest peers.</div>
+              <div class="ask-line"><strong>DILIGENCE</strong>What do former customers say is hardest about implementation?</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 02 runs like code -->
-    <div class="feat flip reveal">
-      <div>
-        <span class="feat-num">2</span>
-        <h3>It runs like code.</h3>
-        <p>Reference a prior call note, branch on a management answer, and feed one block into the next. <b>Change a value upstream and everything downstream recomputes</b> — the way a spreadsheet updates when you edit a cell.</p>
-        <div class="feat-list">
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Reference any line as an input</div>
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Edit upstream, watch downstream update</div>
-        </div>
-      </div>
-      <div class="feat-vis">
-        <div class="card">
-          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">Meeting prep pipeline</span></div>
-          <div class="card-body chain">
-            <div class="cstep"><span class="nm">A</span><span class="tx">Pull prior touchpoints</span><span class="tag green" style="margin-left:auto">done</span></div>
-            <div class="conn"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14"/><polyline points="6 13 12 19 18 13"/></svg></div>
-            <div class="cstep"><span class="nm">B</span><span class="tx">Find open asks from <b>A</b></span><span class="tag green" style="margin-left:auto">done</span></div>
-            <div class="conn"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14"/><polyline points="6 13 12 19 18 13"/></svg></div>
-            <div class="cstep"><span class="nm">C</span><span class="tx">Draft partner brief from <b>B</b></span><span class="tag amber" style="margin-left:auto"><span class="spin"></span> running</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 03 never wait -->
+    <!-- 03 pipeline tracking -->
     <div class="feat reveal">
       <div>
         <span class="feat-num">3</span>
-        <h3>Never wait on a result.</h3>
-        <p>Write every prompt up front and keep going. Each block runs on its own, so <b>you never sit waiting on one agent before the next line.</b> Think at your speed, not the model's.</p>
+        <h3>Your pipeline, tracked.</h3>
+        <p>Give it your targets and watchlist. Summarized updates on funding, ownership changes, leadership, and product moves come to you. <b>No tabs to refresh, no alerts to configure.</b></p>
         <div class="feat-list">
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Queue ten prompts, keep typing</div>
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Results land in place as they finish</div>
+          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ownership and leadership changes surfaced</div>
+          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Only the updates that matter</div>
         </div>
       </div>
       <div class="feat-vis">
         <div class="card">
-          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">Client meeting prep</span></div>
-          <div class="card-body">
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Prior touchpoints</span></span><span class="tag green">done</span></div>
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Management deck summary</span></span><span class="tag amber"><span class="spin"></span> running</span></div>
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Questions for CFO</span></span><span class="tag amber"><span class="spin"></span> running</span></div>
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Next-step email</span></span><span class="tag gray">queued</span></div>
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Risks &amp; open asks</span></span><span class="tag green">done</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 04 skills -->
-    <div class="feat flip reveal">
-      <div>
-        <span class="feat-num">4</span>
-        <h3>Any document is a skill.</h3>
-        <p>Turn a memo template, meeting-prep rubric, or diligence checklist into a reusable skill. Because the document is alive, <b>the skill is alive too</b> — refine the source once and every page that calls it updates.</p>
-        <div class="feat-list">
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Turn any doc into a building block</div>
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Update the source, everything inherits it</div>
-        </div>
-      </div>
-      <div class="feat-vis">
-        <div class="card">
-          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">Partner meeting brief</span></div>
-          <div class="card-body">
-            <div class="brow" style="border:none"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt"><span class="br">/Prep rubric</span> on "Northwind"</span></span><span class="tag purple">skill</span></div>
-            <p class="mini-prose" style="margin-top:0.7rem; font-size:0.92rem; color:var(--ink-3)">Pulls the live rubric, runs it on the deal, and drops the questions right here.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 05 workflows -->
-    <div class="feat reveal">
-      <div>
-        <span class="feat-num">5</span>
-        <h3>Turn a document into a workflow.</h3>
-        <p>A deal workspace is not just notes — it is an instruction sheet the agent follows. Write the steps once, then <b>run the whole document as an automated workflow</b>, on demand or on a schedule.</p>
-        <div class="feat-list">
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Write the steps once, run them on repeat</div>
-          <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Documents double as the agent's instructions</div>
-        </div>
-      </div>
-      <div class="feat-vis">
-        <div class="card">
-          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">Weekly deal pipeline update</span><span class="tag blue" style="margin-left:auto">automated</span></div>
-          <div class="card-body">
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Pull CRM changes</span></span><span class="tag green">done</span></div>
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Flag stale follow-ups</span></span><span class="tag green">done</span></div>
-            <div class="brow"><span class="bp"><svg class="spark" viewBox="0 0 24 24"><path d="M12 2l1.7 6.1L20 10l-6.3 1.9L12 18l-1.7-6.1L4 10l6.3-1.9z"/></svg><span class="txt">Draft Monday pipeline note</span></span><span class="tag amber"><span class="spin"></span> running</span></div>
-            <div class="wf-foot"><svg class="ico" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.5 15a9 9 0 1 1-2.1-9.4L23 10"/></svg> Runs automatically every Monday, 7am</div>
+          <div class="card-bar"><span class="tl"><i class="r"></i><i class="y"></i><i class="g"></i></span><span class="t">Watchlist updates</span><span class="tag green card-tag-right">3 new</span></div>
+          <div class="card-body monitor-list">
+            <div class="monitor-row"><div><div class="monitor-company">Heliograph Systems</div><div class="monitor-update">Hired a new CRO after expanding its channel program.</div></div><div class="monitor-time">2h ago</div></div>
+            <div class="monitor-row"><div><div class="monitor-company">Northline Health</div><div class="monitor-update">Ownership change indicates an active financing process.</div></div><div class="monitor-time">1d ago</div></div>
+            <div class="monitor-row"><div><div class="monitor-company">RelayWorks</div><div class="monitor-update">Former customers discuss a new implementation strategy.</div></div><div class="monitor-time">3d ago</div></div>
           </div>
         </div>
       </div>
@@ -576,17 +625,66 @@
   </div>
 </section>
 
-<!-- dark positioning -->
-<section class="epoch" id="epoch">
+<!-- pricing comparison -->
+<section class="pricing" id="pricing">
   <div class="container reveal">
-    <div class="lead">A new kind of deal workspace</div>
-    <h2>Every deal team gets the document it <em>deserves.</em></h2>
-    <p class="ep-sub">The typewriter set words in ink. The word processor made them soft. The web made them shared. Two Bit makes deal context, judgment, and output live in one place.</p>
-    <div class="epoch-row">
-      <div class="ep-cell"><div class="yr">1868</div><div class="nm">The typewriter</div><div class="ds">A fixed page. Type once, the words are set.</div></div>
-      <div class="ep-cell"><div class="yr">1983</div><div class="nm">The word processor</div><div class="ds">A page you could edit, undo, and reflow.</div></div>
-      <div class="ep-cell"><div class="yr">1995</div><div class="nm">The web doc</div><div class="ds">A page anyone could open and edit together.</div></div>
-      <div class="ep-cell now"><div class="yr">Today</div><div class="nm">The living document</div><div class="ds">A page that reads, runs your agents, and rewrites itself as you do.</div></div>
+    <div class="lead">THE OTHER WAY</div>
+    <h2>What answering the same questions costs the other way.</h2>
+    <p class="pricing-intro">Separate tools sell different pieces of the workflow. Two Bit delivers the lists, research, and tracking through one researcher.</p>
+    <table class="pricing-table">
+      <caption class="ea-hp">Annual research platform price comparison</caption>
+      <thead><tr><th scope="col">Product</th><th scope="col">What it provides</th><th scope="col">Typical annual cost</th></tr></thead>
+      <tbody>
+        <tr><td class="product">PitchBook</td><td class="access">Private company and deal data</td><td class="cost">about $28,000</td></tr>
+        <tr><td class="product">Grata</td><td class="access">Company sourcing and search</td><td class="cost">$20,000+</td></tr>
+        <tr><td class="product">Tegus and expert networks</td><td class="access">Expert call research</td><td class="cost">about $25,000</td></tr>
+        <tr><td class="product">AlphaSense</td><td class="access">Broker and market research</td><td class="cost">$10,000+</td></tr>
+        <tr class="stack-total"><td class="product">Traditional research stack</td><td class="access">All four subscriptions</td><td class="cost">$83,000+</td></tr>
+        <tr class="highlight"><td class="product">Two Bit</td><td class="access">Lists, research, and tracking</td><td class="cost">$5,988</td></tr>
+      </tbody>
+    </table>
+    <p class="pricing-note">$83,000+ a year for the traditional stack. $5,988 a year for Two Bit. More than $77,000 less per year. Two Bit is $499 a month with no annual contract.</p>
+    <p class="pricing-fine">Prices shown are approximate market comparisons and vary by package, contract, and seat count. Two Bit is not affiliated with or endorsed by PitchBook, Grata, Tegus, or AlphaSense. Company names are used for price comparison only. Two Bit provides AI-generated research outputs and monitoring.</p>
+  </div>
+</section>
+
+<!-- research output -->
+<section class="sample" id="example">
+  <div class="container reveal">
+    <div class="section-eyebrow">THE EDGE IN PRACTICE</div>
+    <h2>See the risk before it becomes the dealbreaker.</h2>
+    <div class="sample-grid">
+      <div class="sample-panel">
+        <div class="label">QUESTION</div>
+        <p class="sample-question">What do former customers say caused churn after this company's pricing change?</p>
+      </div>
+      <div class="sample-panel">
+        <div class="label">TWO BIT ANSWER</div>
+        <p class="sample-answer">The pricing change was not the main reason customers left. Across the available interviews, implementation delays and weak post-sale support appeared more often. Larger customers generally accepted the increase when they had a dedicated success lead.</p>
+        <p class="sample-citation">Sources: expert transcript excerpts, broker research, company and transaction data, and public information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container reveal">
+    <div class="section-eyebrow">QUESTIONS</div>
+    <h2>What Two Bit is, and what it is not.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is this just an AI that searches the web?</div>
+        <div class="faq-a">No. Two Bit's researcher already works across broker research, expert call transcripts, private market data, and public information. It connects the evidence across those sources instead of searching the same public web as everyone else.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What do I actually get?</div>
+        <div class="faq-a">Deliverables: company lists with ownership and contact information, company research and answers to your questions, and ongoing tracking updates. What you do not get is the underlying source documents. The equity research reports and raw database exports stay where they are. Your researcher reads them; you get the output.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Who is this for?</div>
+        <div class="faq-a">PE funds, independent sponsors, searchers, family offices, and angels. Anyone doing serious private markets work who would rather pay for research than for five data platforms.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -594,16 +692,27 @@
 <!-- CTA -->
 <section class="cta" id="get-access">
   <div class="container reveal">
-    <h2>Bring your deal thinking into one living workspace.</h2>
-    <p>Two Bit is in private beta. Tell us about the deal workflow, diligence process, or document-heavy team process you want to run.</p>
+    <h2>Put a researcher on your next deal.</h2>
+    <p>Join the waitlist for target lists, company research, and pipeline tracking at $499 a month.</p>
     <form class="ea-form" id="eaForm" data-endpoint="https://us-central1-long-justice-399808.cloudfunctions.net/alphawatch-contact">
       <div class="ea-row">
-        <label>Name<input name="name" autocomplete="name" required></label>
-        <label>Work email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Name<input name="name" type="text" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
       </div>
-      <label>What are you working on?<textarea name="workflow" placeholder="Client meeting prep, management presentation notes, internal memos, deal tracking, diligence workflows..." required></textarea></label>
-      <label class="ea-hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
-      <button type="submit" class="btn btn-dark btn-lg">Get early access</button>
+      <label>I invest as
+        <select name="investorType" required>
+          <option value="" selected disabled>Select one</option>
+          <option>PE fund</option>
+          <option>Independent sponsor</option>
+          <option>Searcher</option>
+          <option>Family office</option>
+          <option>Angel investor</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>What should your researcher deliver first?<textarea name="workflow" placeholder="A target list, company deep dive, or watchlist..." required></textarea></label>
+      <label class="ea-hp" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+      <button type="submit" class="btn btn-dark btn-lg">Hire your researcher</button>
       <p class="ea-status" id="eaStatus" aria-live="polite"></p>
     </form>
   </div>
@@ -614,14 +723,15 @@
     <div class="foot-top">
       <div>
         <div class="foot-brand"><img src="logo.svg" alt="">Two Bit</div>
-        <p class="foot-tag">Where deal thinking comes alive.</p>
+        <p class="foot-tag">Hire an AI researcher. Skip the data subscriptions.</p>
       </div>
       <div class="foot-cols">
         <div class="foot-col">
           <h4>Product</h4>
-          <a href="#features">How it works</a>
-          <a href="#epoch">Why it's different</a>
-          <a href="#get-access">Get early access</a>
+          <a href="#how-it-works">What you get</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#get-access">Hire your researcher</a>
         </div>
       </div>
     </div>
@@ -669,169 +779,19 @@
         name: get("name"),
         email: get("email"),
         firm: "",
-        interest: "Early access",
-        workflow: get("workflow"),
+        interest: "Two Bit waitlist",
+        workflow: "Investor type: " + get("investorType") + "\n\nFirst research request: " + get("workflow"),
         website: get("website"),
         source: "Two Bit"
       };
-      setStatus("Sending…", "");
+      setStatus("Joining the waitlist...", "");
       if (btn) btn.disabled = true;
       fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
-        .then(function (res) { if (!res.ok) throw new Error("bad status"); eaForm.reset(); setStatus("You're on the list — we'll be in touch shortly.", "success"); })
+        .then(function (res) { if (!res.ok) throw new Error("bad status"); eaForm.reset(); setStatus("You're on the waitlist. We'll be in touch shortly.", "success"); })
         .catch(function () { setStatus("Something went wrong. Email jackson@twobit.ai and we'll sort it out.", "error"); })
         .then(function () { if (btn) btn.disabled = false; });
     });
   }
-
-  /* ───────── self-playing living document ───────── */
-  var DATA = {
-    line1: "Northwind is back on the roadshow next week. Let's turn the last call, deck, and pipeline notes into a partner brief.",
-    p3: "Summarize Northwind from the management deck and prior call notes",
-    fig: [
-      ["Revenue", "$182M → $241M → $300M", null],
-      ["EBITDA margin", "22% → 14%", "(down 8 pts)"],
-      ["Next step", "CFO follow-up on bridge", null]
-    ],
-    margin: "14%",
-    l5pre: "At a ",
-    l5mid: " EBITDA margin, Northwind sits ",
-    l5tailA: "below the ~18% sector median — a flag I'd want explained before we bid.",
-    newFigMargin: "22% → 19%",
-    newFigDelta: "(down 3 pts)",
-    newMargin: "19%",
-    l5tailB: "right in line with the ~18% sector median — the margin worry mostly resolves."
-  };
-
-  var $ = function (id) { return document.getElementById(id); };
-  var ln1 = $("ln1"),
-      b3wrap = $("b3wrap"), b3 = $("b3"), p3text = $("p3text"), p3out = $("p3out"), p3stat = $("p3stat"),
-      ln5wrap = $("ln5wrap"), l5pre = $("l5pre"), l5var = $("l5var"), l5mid = $("l5mid"), l5tail = $("l5tail");
-  if (!ln1) return;
-
-  function SPIN(label) { return '<span class="spin"></span> ' + label; }
-  function QUEUE(label) { return '<span class="dotq"></span> ' + label; }
-  var CHECK = '<svg class="ico check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ';
-
-  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
-
-  function type(node, text, speed, caret) {
-    return new Promise(function (resolve) {
-      var i = 0; node.textContent = "";
-      (function step() {
-        if (i <= text.length) {
-          node.textContent = text.slice(0, i);
-          if (caret) { var c = document.createElement("span"); c.className = "caret"; node.appendChild(c); }
-          i++; setTimeout(step, speed);
-        } else { resolve(); }
-      })();
-    });
-  }
-
-  function figRows() {
-    p3out.innerHTML = "";
-    return DATA.fig.map(function (f, i) {
-      var d = document.createElement("div"); d.className = "o";
-      var valAttr = (i === 1) ? ' id="marginVal"' : '';
-      var delta = '';
-      if (f[2]) { var dlAttr = (i === 1) ? ' id="marginDelta"' : ''; delta = ' <span class="dl"' + dlAttr + '>' + f[2] + '</span>'; }
-      d.innerHTML = '<span class="lbl">' + f[0] + '</span><span class="val"' + valAttr + '>' + f[1] + '</span>' + delta;
-      p3out.appendChild(d);
-      return d;
-    });
-  }
-
-  function outLine(container, html) { container.innerHTML = '<div class="o">' + html + '</div>'; return container.firstChild; }
-
-  async function revealRows(rows, gap) { for (var i = 0; i < rows.length; i++) { rows[i].classList.add("show"); await sleep(gap); } }
-
-  function resetDemo() {
-    ln1.textContent = "";
-    b3wrap.style.display = "none"; b3.className = "ai-cmd"; p3text.textContent = ""; p3out.innerHTML = ""; p3stat.className = "pstat"; p3stat.innerHTML = "";
-    ln5wrap.style.display = "none"; l5pre.textContent = ""; l5mid.textContent = ""; l5tail.textContent = "";
-    l5tail.style.opacity = ""; l5tail.style.transition = ""; l5var.className = "var pending"; l5var.textContent = "";
-  }
-
-  function renderFinal() {
-    ln1.textContent = DATA.line1;
-    b3wrap.style.display = ""; p3text.textContent = DATA.p3;
-    p3stat.className = "pstat done"; p3stat.innerHTML = CHECK + "done";
-    figRows().forEach(function (r) { r.classList.add("show"); });
-    ln5wrap.style.display = ""; l5pre.textContent = DATA.l5pre; l5mid.textContent = DATA.l5mid; l5tail.textContent = DATA.l5tailA;
-    l5var.className = "var"; l5var.textContent = DATA.margin;
-  }
-
-  async function runOnce() {
-    resetDemo();
-    await sleep(450);
-
-    // a written thought
-    await type(ln1, DATA.line1, 14, true); ln1.textContent = DATA.line1;
-    await sleep(260);
-
-    // an AI instruction dropped into the document — no code, no braces. It runs in place.
-    b3wrap.style.display = "";
-    await type(p3text, DATA.p3, 14, true); p3text.textContent = DATA.p3;
-    b3.classList.add("run"); p3stat.className = "pstat"; p3stat.innerHTML = SPIN("running");
-
-    // keep writing — a plain sentence that pulls in a value that doesn't exist yet
-    await sleep(420);
-    ln5wrap.style.display = "";
-    await type(l5pre, DATA.l5pre, 16, true); l5pre.textContent = DATA.l5pre;
-    l5var.className = "var pending"; l5var.textContent = "";   // the value is still computing
-    await sleep(140);
-    await type(l5mid, DATA.l5mid, 14, true); l5mid.textContent = DATA.l5mid;
-    await type(l5tail, DATA.l5tailA, 13, true); l5tail.textContent = DATA.l5tailA;
-
-    // the sentence is written, but its value isn't back yet
-    await sleep(780);
-
-    // the AI block returns
-    b3.classList.remove("run"); p3stat.className = "pstat done"; p3stat.innerHTML = CHECK + "done";
-    await revealRows(figRows(), 230);
-
-    // the variable in the sentence fills itself in, pulled from the block above
-    await sleep(440);
-    l5var.className = "var"; l5var.textContent = DATA.margin; void l5var.offsetWidth; l5var.classList.add("flash");
-
-    // hold
-    await sleep(2600);
-
-    // the source material updates — the figure changes
-    p3stat.className = "pstat updated"; p3stat.innerHTML = "↻ source updated";
-    var mv = $("marginVal"), md = $("marginDelta");
-    if (mv) { mv.textContent = DATA.newFigMargin; mv.classList.add("flash"); }
-    if (md) { md.textContent = DATA.newFigDelta; }
-    await sleep(720);
-
-    // the live value in the written sentence updates, and the thought updates with it
-    l5var.classList.remove("flash"); void l5var.offsetWidth; l5var.classList.add("pulse");
-    await sleep(450);
-    l5var.textContent = DATA.newMargin; l5var.classList.remove("pulse"); void l5var.offsetWidth; l5var.classList.add("flash");
-    l5tail.style.transition = "opacity 0.3s"; l5tail.style.opacity = "0";
-    await sleep(340);
-    l5tail.textContent = DATA.l5tailB; l5tail.style.opacity = "1";
-    if (mv) mv.classList.remove("flash");
-    p3stat.className = "pstat done"; p3stat.innerHTML = CHECK + "done";
-
-    await sleep(4200);
-  }
-
-  if (reduce) { renderFinal(); return; }
-
-  var started = false;
-  function start() {
-    if (started) return; started = true;
-    (async function loop() { while (true) { try { await runOnce(); } catch (e) { renderFinal(); await sleep(5000); } } })();
-  }
-
-  var demo = document.getElementById("heroDoc");
-  function inView(el) { var r = el.getBoundingClientRect(); return r.top < (window.innerHeight || document.documentElement.clientHeight) && r.bottom > 0; }
-  if (demo && inView(demo)) {
-    start();
-  } else if ("IntersectionObserver" in window && demo) {
-    var dio = new IntersectionObserver(function (entries) { if (entries[0].isIntersecting) { start(); dio.disconnect(); } }, { threshold: 0.15 });
-    dio.observe(demo);
-  } else { start(); }
 })();
 </script>
 
