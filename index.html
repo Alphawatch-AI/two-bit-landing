@@ -10,9 +10,9 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" href="favicon.png">
 <title>Two Bit | Hire an AI researcher</title>
-<meta name="description" content="Build target lists, research any company, and track your pipeline with an AI researcher for private markets. $499 a month.">
+<meta name="description" content="Build target lists, map private markets, research companies, and monitor the ones you care about with an AI researcher.">
 <meta property="og:title" content="Two Bit | Hire an AI researcher">
-<meta property="og:description" content="Hire an AI researcher. Skip the data subscriptions.">
+<meta property="og:description" content="Hire an AI researcher. Off market deal sourcing on auto pilot.">
 <meta property="og:type" content="website">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -113,8 +113,8 @@
   .hero-actions { margin-top: 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
   .hero .btn-dark { background: #F7F3EC; color: #17151A; }
   .hero .btn-dark:hover { background: #FFFFFF; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-  .launch-price { color: #8E8983; font-size: 0.9rem; font-weight: 500; }
-  .launch-price strong { color: #E8E2DA; font-weight: 600; }
+  .launch-status { color: #8E8983; font-size: 0.9rem; font-weight: 500; }
+  .launch-status strong { color: #E8E2DA; font-weight: 600; }
 
   /* ───────── APP WINDOW (the product) ───────── */
   .app-wrap { margin-top: 5rem; max-width: 68rem; }
@@ -368,33 +368,6 @@
   .ask-card { display: grid; gap: 0.7rem; }
   .ask-line { padding: 0.7rem 0.8rem; border: 1px solid var(--line); border-radius: 9px; background: #FCFBF9; font-size: 0.82rem; color: var(--ink-2); }
   .ask-line strong { display: block; color: var(--ink); font-size: 0.74rem; margin-bottom: 0.18rem; }
-  .subscription-stack { display: grid; gap: 0.55rem; }
-  .subscription-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.65rem 0.75rem; border: 1px solid var(--line); border-radius: 9px; background: #FCFBF9; font-size: 0.82rem; color: var(--ink-2); }
-  .subscription-row strong { color: var(--ink); }
-  .subscription-row.two-bit { border-color: var(--brand-line); background: var(--brand-wash); color: var(--brand-ink); }
-
-  /* ───────── pricing comparison ───────── */
-  .pricing { margin-top: 5.5rem; background: var(--dark); color: var(--cream); }
-  .pricing .container { padding-top: 6rem; padding-bottom: 5.5rem; }
-  .pricing .lead { font-size: 0.82rem; color: #9CA0F2; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-  .pricing h2 { margin-top: 1.1rem; color: var(--cream); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -0.03em; max-width: 20ch; }
-  .pricing-intro { margin-top: 1.25rem; color: #B8B2A9; font-size: 1.08rem; max-width: 38rem; }
-  .pricing-table { margin-top: 3rem; width: 100%; border: 1px solid var(--dark-line); border-radius: 14px; border-spacing: 0; overflow: hidden; }
-  .pricing-table th, .pricing-table td { padding: 1rem 1.15rem; border-bottom: 1px solid var(--dark-line); text-align: left; }
-  .pricing-table th { background: var(--dark-2); color: #8F8981; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-  .pricing-table th:last-child { text-align: right; }
-  .pricing-table tbody tr:last-child td { border-bottom: 0; }
-  .pricing-table .product { width: 34%; font-weight: 700; color: #F3EFE7; }
-  .pricing-table .access { width: 42%; color: #A7A198; font-size: 0.9rem; }
-  .pricing-table .cost { width: 24%; color: #F3EFE7; font-family: var(--mono); font-size: 0.88rem; text-align: right; }
-  .pricing-table .stack-total td { background: var(--dark-2); border-top: 2px solid #4A454D; }
-  .pricing-table .stack-total .product, .pricing-table .stack-total .cost { color: #FFFFFF; font-size: 0.95rem; }
-  .pricing-table .highlight td { background: rgba(59,67,224,0.16); }
-  .pricing-table .highlight td:first-child { box-shadow: inset 3px 0 0 var(--brand); }
-  .pricing-table .highlight .product, .pricing-table .highlight .cost { color: #C7C9FF; }
-  .pricing-note { margin-top: 1.4rem; color: #F3EFE7; font-size: 1.02rem; font-weight: 700; }
-  .pricing-fine { margin-top: 1rem; color: #77716A; font-size: 0.72rem; line-height: 1.55; max-width: 56rem; }
-
   /* ───────── example and FAQ ───────── */
   .sample { padding: 6rem 0; }
   .section-eyebrow { color: var(--brand-ink); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -433,15 +406,6 @@
     .target-row.head { display: none; }
     .epoch-row { grid-template-columns: 1fr; }
     .statement .container, .epoch .container { padding-top: 3.5rem; padding-bottom: 3.5rem; }
-    .pricing .container { padding-top: 4rem; padding-bottom: 4rem; }
-    .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table td { display: block; width: 100%; }
-    .pricing-table thead { display: none; }
-    .pricing-table tr { border-bottom: 1px solid var(--dark-line); }
-    .pricing-table tbody tr:last-child { border-bottom: 0; }
-    .pricing-table td { border-bottom: 0; padding: 0.3rem 1rem; text-align: left; }
-    .pricing-table td.product { width: 100%; padding-top: 1rem; }
-    .pricing-table td.access { width: 100%; }
-    .pricing-table td.cost { width: 100%; padding-bottom: 1rem; text-align: left; }
     .faq-item { grid-template-columns: 1fr; gap: 0.55rem; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -458,7 +422,6 @@
     <a href="/" class="brand"><img src="logo.svg" alt="">Two Bit</a>
     <div class="nav-mid">
       <a href="#how-it-works">What you get</a>
-      <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-right">
@@ -471,11 +434,11 @@
   <div class="container">
     <div class="hero-copy research-hero">
       <p class="hero-kicker">AI research for private markets</p>
-      <h1>Hire an AI researcher. Skip the data subscriptions.</h1>
-      <p class="hero-sub">Two Bit builds target lists, researches any company, and tracks your pipeline. Informed by the sources that cost $30,000 a seat, delivered for $499 a month.</p>
+      <h1>Hire an AI researcher. Off market deal sourcing on auto pilot.</h1>
+      <p class="hero-sub">Two Bit builds target lists, maps markets, researches companies, and monitors the ones you care about. Informed by public, private-company, transaction, and ownership data.</p>
       <div class="hero-actions">
         <a href="#get-access" class="btn btn-dark btn-lg">Hire your researcher</a>
-        <p class="launch-price"><strong>Waitlist open.</strong> Launching soon.</p>
+        <p class="launch-status"><strong>Waitlist open.</strong> Launching soon.</p>
       </div>
     </div>
   </div>
@@ -579,7 +542,7 @@
       <div>
         <span class="feat-num">2</span>
         <h3>Understand the market before you move.</h3>
-        <p>See the landscape, key players, competitive dynamics, comparable transactions, and risks. Then go deep on any company with <b>sourced answers from broker research, expert transcripts, and private company data.</b></p>
+        <p>See the landscape, key players, competitive dynamics, comparable transactions, and risks. Then go deep on any company with <b>sourced answers from research, private-company data, and transaction data.</b></p>
         <div class="feat-list">
           <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Market maps and comp sets built for your thesis</div>
           <div><svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Sourced answers instead of search results</div>
@@ -592,7 +555,7 @@
             <div class="ask-card">
               <div class="ask-line"><strong>MARKET MAP</strong>Map vertical software companies serving independent insurance agencies.</div>
               <div class="ask-line"><strong>COMP SET</strong>Compare retention, ownership, and recent deal activity across the five closest peers.</div>
-              <div class="ask-line"><strong>DILIGENCE</strong>What do former customers say is hardest about implementation?</div>
+              <div class="ask-line"><strong>DILIGENCE</strong>What do recent transactions imply about valuation and buyer appetite?</div>
             </div>
           </div>
         </div>
@@ -616,35 +579,12 @@
           <div class="card-body monitor-list">
             <div class="monitor-row"><div><div class="monitor-company">Heliograph Systems</div><div class="monitor-update">Hired a new CRO after expanding its channel program.</div></div><div class="monitor-time">2h ago</div></div>
             <div class="monitor-row"><div><div class="monitor-company">Northline Health</div><div class="monitor-update">Ownership change indicates an active financing process.</div></div><div class="monitor-time">1d ago</div></div>
-            <div class="monitor-row"><div><div class="monitor-company">RelayWorks</div><div class="monitor-update">Former customers discuss a new implementation strategy.</div></div><div class="monitor-time">3d ago</div></div>
+            <div class="monitor-row"><div><div class="monitor-company">RelayWorks</div><div class="monitor-update">Launched a new implementation strategy for larger customers.</div></div><div class="monitor-time">3d ago</div></div>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- pricing comparison -->
-<section class="pricing" id="pricing">
-  <div class="container reveal">
-    <div class="lead">THE OTHER WAY</div>
-    <h2>What answering the same questions costs the other way.</h2>
-    <p class="pricing-intro">Separate tools sell different pieces of the workflow. Two Bit delivers the lists, research, and tracking through one researcher.</p>
-    <table class="pricing-table">
-      <caption class="ea-hp">Annual research platform price comparison</caption>
-      <thead><tr><th scope="col">Product</th><th scope="col">What it provides</th><th scope="col">Typical annual cost</th></tr></thead>
-      <tbody>
-        <tr><td class="product">PitchBook</td><td class="access">Private company and deal data</td><td class="cost">about $28,000</td></tr>
-        <tr><td class="product">Grata</td><td class="access">Company sourcing and search</td><td class="cost">$20,000+</td></tr>
-        <tr><td class="product">Tegus and expert networks</td><td class="access">Expert call research</td><td class="cost">about $25,000</td></tr>
-        <tr><td class="product">AlphaSense</td><td class="access">Broker and market research</td><td class="cost">$10,000+</td></tr>
-        <tr class="stack-total"><td class="product">Traditional research stack</td><td class="access">All four subscriptions</td><td class="cost">$83,000+</td></tr>
-        <tr class="highlight"><td class="product">Two Bit</td><td class="access">Lists, research, and tracking</td><td class="cost">$5,988</td></tr>
-      </tbody>
-    </table>
-    <p class="pricing-note">$83,000+ a year for the traditional stack. $5,988 a year for Two Bit. More than $77,000 less per year. Two Bit is $499 a month with no annual contract.</p>
-    <p class="pricing-fine">Prices shown are approximate market comparisons and vary by package, contract, and seat count. Two Bit is not affiliated with or endorsed by PitchBook, Grata, Tegus, or AlphaSense. Company names are used for price comparison only. Two Bit provides AI-generated research outputs and monitoring.</p>
   </div>
 </section>
 
@@ -656,12 +596,12 @@
     <div class="sample-grid">
       <div class="sample-panel">
         <div class="label">QUESTION</div>
-        <p class="sample-question">What do former customers say caused churn after this company's pricing change?</p>
+        <p class="sample-question">Where is the independent insurance software market consolidating?</p>
       </div>
       <div class="sample-panel">
         <div class="label">TWO BIT ANSWER</div>
-        <p class="sample-answer">The pricing change was not the main reason customers left. Across the available interviews, implementation delays and weak post-sale support appeared more often. Larger customers generally accepted the increase when they had a dedicated success lead.</p>
-        <p class="sample-citation">Sources: expert transcript excerpts, broker research, company and transaction data, and public information.</p>
+        <p class="sample-answer">Recent transactions cluster around agency management, compliance, and payments. Founder-owned vendors with durable carrier integrations appear most strategically relevant because they expand distribution and workflow depth.</p>
+        <p class="sample-citation">Sources: company and transaction data, company materials, and public information.</p>
       </div>
     </div>
   </div>
@@ -675,15 +615,15 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">Is this just an AI that searches the web?</div>
-        <div class="faq-a">No. Two Bit's researcher already works across broker research, expert call transcripts, private market data, and public information. It connects the evidence across those sources instead of searching the same public web as everyone else.</div>
+        <div class="faq-a">No. Two Bit's researcher works across private-market data, transaction data, and public information. It connects the evidence across those sources instead of searching the same public web as everyone else.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What do I actually get?</div>
-        <div class="faq-a">Deliverables: company lists with ownership and contact information, company research and answers to your questions, and ongoing tracking updates. What you do not get is the underlying source documents. The equity research reports and raw database exports stay where they are. Your researcher reads them; you get the output.</div>
+        <div class="faq-a">Deliverables: company lists with ownership and contact information, company research and answers to your questions, and ongoing tracking updates.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Who is this for?</div>
-        <div class="faq-a">PE funds, independent sponsors, searchers, family offices, and angels. Anyone doing serious private markets work who would rather pay for research than for five data platforms.</div>
+        <div class="faq-a">PE funds, independent sponsors, searchers, family offices, and angels. Anyone doing serious private-market work who needs more research capacity without adding more data platforms.</div>
       </div>
     </div>
   </div>
@@ -693,7 +633,7 @@
 <section class="cta" id="get-access">
   <div class="container reveal">
     <h2>Put a researcher on your next deal.</h2>
-    <p>Join the waitlist for target lists, company research, and pipeline tracking at $499 a month.</p>
+    <p>Join the waitlist for target lists, market maps, company research, and company monitoring.</p>
     <form class="ea-form" id="eaForm" data-endpoint="https://us-central1-long-justice-399808.cloudfunctions.net/alphawatch-contact">
       <div class="ea-row">
         <label>Name<input name="name" type="text" autocomplete="name" required></label>
@@ -723,13 +663,12 @@
     <div class="foot-top">
       <div>
         <div class="foot-brand"><img src="logo.svg" alt="">Two Bit</div>
-        <p class="foot-tag">Hire an AI researcher. Skip the data subscriptions.</p>
+        <p class="foot-tag">Hire an AI researcher. Off market deal sourcing on auto pilot.</p>
       </div>
       <div class="foot-cols">
         <div class="foot-col">
           <h4>Product</h4>
           <a href="#how-it-works">What you get</a>
-          <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
           <a href="#get-access">Hire your researcher</a>
         </div>
